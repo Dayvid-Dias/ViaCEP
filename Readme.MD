@@ -18,8 +18,8 @@ O sistema permite consultar endereços a partir de CEPs utilizando a API [ViaCEP
 
 ## 📁 Estrutura
 O projeto está organizado em pacotes que separam:
-- Modelos (representação de endereço)
-- Serviços (requisição HTTP e gravação de arquivos)
+- Models (representação de endereço)
+- Services (requisição HTTP e gravação de arquivos)
 - Classe principal (execução do programa)
 
 ## 👨‍💻 Sobre
