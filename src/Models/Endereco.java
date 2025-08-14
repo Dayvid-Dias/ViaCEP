@@ -12,7 +12,6 @@ public class Endereco {
     public String getCep() {
         return cep;
     }
-
     public void setCep(String cep){
         this.cep = cep;
     }
@@ -20,7 +19,6 @@ public class Endereco {
     public String getLogradouro(){
         return logradouro;
     }
-
     public void setLogradouro(String logradouro){
         this.logradouro = logradouro;
     }
@@ -28,7 +26,6 @@ public class Endereco {
     public String getBairro() {
         return bairro;
     }
-
     public void setBairro(String bairro) {
         this.bairro = bairro;
     }
@@ -36,7 +33,6 @@ public class Endereco {
     public String getCidade() {
         return cidade;
     }
-
     public void setCidade(String cidade) {
         this.cidade = cidade;
     }
@@ -44,7 +40,6 @@ public class Endereco {
     public String getEstado() {
         return estado;
     }
-
     public void setEstado(String estado) {
         this.estado = estado;
     }
@@ -52,7 +47,6 @@ public class Endereco {
     public String getRegiao() {
         return regiao;
     }
-
     public void setRegiao(String regiao) {
         this.regiao = regiao;
     }
@@ -60,8 +54,20 @@ public class Endereco {
     public int getDdd() {
         return ddd;
     }
-
     public void setDdd(int ddd) {
         this.ddd = ddd;
+    }
+
+    @Override
+    public String toString() {
+        return "Endereco{" +
+                "cep='" + cep + '\'' +
+                ", logradouro='" + logradouro + '\'' +
+                ", bairro='" + bairro + '\'' +
+                ", cidade='" + cidade + '\'' +
+                ", estado='" + estado + '\'' +
+                ", regiao='" + regiao + '\'' +
+                ", ddd=" + ddd +
+                '}';
     }
 }

@@ -1,34 +1,36 @@
 package Services;
 
-import java.io.IOException;
+import Models.Endereco;
+import com.google.gson.Gson;
+
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class ViaCEPService {
-    private String endereco;
 
-    public String getEndereco() {
-        return endereco;
+    private final HttpClient client;
+
+    public ViaCEPService() {
+        this.client = HttpClient.newHttpClient();
     }
 
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
+    public Endereco buscarEndereco(String cep) {
+        try {
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create("https://viacep.com.br/ws/" + cep + "/json/"))
+                    .build();
 
-    HttpClient client = HttpClient.newHttpClient();
-    HttpRequest request;
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
-    {
-        request = HttpRequest.newBuilder()
-                .uri(URI.create("https://viacep.com.br/ws/"+ endereco + "/json/"))
-                .build();
-    }
+            Gson gson = new Gson();
+            Endereco endereco = gson.fromJson(response.body(), Endereco.class);
 
-    HttpResponse<String> response = client
-            .send(request, HttpResponse.BodyHandlers.ofString());
-
-    public ViaCEPService() throws IOException, InterruptedException {
+            return endereco;
+        } catch (Exception e) {
+            System.out.println("Erro ao buscar o CEP: " + e.getMessage());
+            return null;
+        }
     }
 }
