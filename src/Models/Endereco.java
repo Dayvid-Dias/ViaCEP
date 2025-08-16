@@ -4,7 +4,7 @@ public class Endereco {
     private String cep;
     private String logradouro;
     private String bairro;
-    private String cidade;
+    private String localidade;
     private String estado;
     private String regiao;
     private int ddd;
@@ -30,11 +30,11 @@ public class Endereco {
         this.bairro = bairro;
     }
 
-    public String getCidade() {
-        return cidade;
+    public String getLocalidade() {
+        return localidade;
     }
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
+    public void setLocalidade(String localidade) {
+        this.localidade = localidade;
     }
 
     public String getEstado() {
@@ -64,7 +64,7 @@ public class Endereco {
                 "cep='" + cep + '\'' +
                 ", logradouro='" + logradouro + '\'' +
                 ", bairro='" + bairro + '\'' +
-                ", cidade='" + cidade + '\'' +
+                ", cidade='" + localidade + '\'' +
                 ", estado='" + estado + '\'' +
                 ", regiao='" + regiao + '\'' +
                 ", ddd=" + ddd +
